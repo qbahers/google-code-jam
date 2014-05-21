@@ -16,5 +16,7 @@ end
 
 problem = Problem.new
 
-problem.solve('.in')
+problem.solve('sample.in')
+#problem.solve('-small-practice.in')
+#problem.solve('-large-practice.in')
 
