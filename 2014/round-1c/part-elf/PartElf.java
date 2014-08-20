@@ -8,10 +8,14 @@ public class PartElf {
         for (int t = 1; t <= T; t++) {
             String fraction = in.next();
             String[] parts = fraction.split("/");
-            int P = Integer.parseInt(parts[0]);
-            int Q = Integer.parseInt(parts[1]);
+            long P = Long.parseLong(parts[0]);
+            long Q = Long.parseLong(parts[1]);
 
             System.out.printf("Case #%d: ", t);
+
+            long gcd = gcd(P, Q);
+            P /= gcd;
+            Q /= gcd;
             
             int k = 0;
             while (Q % 2 == 0) {
@@ -30,5 +34,10 @@ public class PartElf {
                 System.out.println("impossible");
             }
         }
+    }
+
+    private static long gcd(long a, long b) {
+        if (a == 0 || b == 0) return a+b;
+        return gcd(b, a % b);
     }
 }
